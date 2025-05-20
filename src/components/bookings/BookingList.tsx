@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Eye, Edit, Trash2 } from 'lucide-react';
 
 interface Booking {
   id: string;
@@ -72,6 +73,19 @@ const BookingList = () => {
     }
   };
 
+  const handleView = (id: string) => {
+    navigate(`/bookings/view/${id}`);
+  };
+
+  const handleEdit = (id: string) => {
+    navigate(`/bookings/edit/${id}`);
+  };
+
+  const handleDelete = (id: string) => {
+    // In a real app, this would call an API to delete the booking
+    console.log(`Delete booking with ID: ${id}`);
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
       <div className="p-4 border-b">
@@ -141,14 +155,26 @@ const BookingList = () => {
                 </td>
                 <td className="py-3 px-4">
                   <div className="flex space-x-2">
-                    <button className="text-gray-500 hover:text-cab-orange">
-                      👁️
+                    <button 
+                      onClick={() => handleView(booking.id)}
+                      className="text-gray-500 hover:text-cab-orange"
+                      aria-label="View booking"
+                    >
+                      <Eye size={16} />
                     </button>
-                    <button className="text-gray-500 hover:text-cab-orange">
-                      ✏️
+                    <button 
+                      onClick={() => handleEdit(booking.id)}
+                      className="text-gray-500 hover:text-cab-orange"
+                      aria-label="Edit booking"
+                    >
+                      <Edit size={16} />
                     </button>
-                    <button className="text-gray-500 hover:text-red-500">
-                      🗑️
+                    <button 
+                      onClick={() => handleDelete(booking.id)}
+                      className="text-gray-500 hover:text-red-500"
+                      aria-label="Delete booking"
+                    >
+                      <Trash2 size={16} />
                     </button>
                   </div>
                 </td>

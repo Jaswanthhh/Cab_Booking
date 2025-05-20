@@ -11,6 +11,9 @@ import AddCabPage from "./pages/cab-details/AddCabPage";
 import ViewCabPage from "./pages/cab-details/ViewCabPage";
 import EditCabPage from "./pages/cab-details/EditCabPage";
 import BookingsPage from "./pages/bookings/BookingsPage";
+import AddBookingPage from "./pages/bookings/AddBookingPage";
+import ViewBookingPage from "./pages/bookings/ViewBookingPage";
+import EditBookingPage from "./pages/bookings/EditBookingPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +36,9 @@ const App = () => (
           
           {/* Bookings Routes */}
           <Route path="/bookings" element={<BookingsPage />} />
+          <Route path="/bookings/add" element={<AddBookingPage />} />
+          <Route path="/bookings/view/:id" element={<ViewBookingPage />} />
+          <Route path="/bookings/edit/:id" element={<EditBookingPage />} />
           
           {/* Placeholder Routes */}
           <Route path="/user" element={<PlaceholderPage title="User" />} />
