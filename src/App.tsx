@@ -14,6 +14,10 @@ import BookingsPage from "./pages/bookings/BookingsPage";
 import AddBookingPage from "./pages/bookings/AddBookingPage";
 import ViewBookingPage from "./pages/bookings/ViewBookingPage";
 import EditBookingPage from "./pages/bookings/EditBookingPage";
+import PaymentsPage from "./pages/payments/PaymentsPage";
+import ViewPaymentPage from "./pages/payments/ViewPaymentPage";
+import SupportPage from "./pages/support/SupportPage";
+import EditSupportPage from "./pages/support/EditSupportPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
 
@@ -40,12 +44,18 @@ const App = () => (
           <Route path="/bookings/view/:id" element={<ViewBookingPage />} />
           <Route path="/bookings/edit/:id" element={<EditBookingPage />} />
           
+          {/* Payments Routes */}
+          <Route path="/payments" element={<PaymentsPage />} />
+          <Route path="/payments/view/:id" element={<ViewPaymentPage />} />
+          
+          {/* Support Routes */}
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/support/edit" element={<EditSupportPage />} />
+          
           {/* Placeholder Routes */}
           <Route path="/user" element={<PlaceholderPage title="User" />} />
           <Route path="/driver" element={<PlaceholderPage title="Driver" />} />
           <Route path="/drivers-wallet" element={<PlaceholderPage title="Drivers Wallet" />} />
-          <Route path="/payments" element={<PlaceholderPage title="Payments" />} />
-          <Route path="/support" element={<PlaceholderPage title="Help & Support" />} />
           <Route path="/account-deletion" element={<PlaceholderPage title="Account Deletion" />} />
           <Route path="/privacy-policy" element={<PlaceholderPage title="Privacy Policy" />} />
           <Route path="/terms" element={<PlaceholderPage title="Terms & Conditions" />} />

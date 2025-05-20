@@ -69,13 +69,13 @@ const Sidebar = () => {
           to="/payments" 
           icon={<i>💰</i>} 
           label="Payments" 
-          active={path === '/payments'} 
+          active={path.includes('/payments')} 
         />
         <SidebarItem 
           to="/support" 
           icon={<i>🔧</i>} 
           label="Help & Support" 
-          active={path === '/support'} 
+          active={path.includes('/support')} 
         />
         <SidebarItem 
           to="/account-deletion" 
