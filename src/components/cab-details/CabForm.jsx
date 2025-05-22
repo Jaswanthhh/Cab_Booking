@@ -3,21 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-interface CabFormProps {
-  isEdit?: boolean;
-  initialData?: {
-    vehicleType: string;
-    tagLine: string;
-    vehicleNo: string;
-    driverName: string;
-    address: string;
-    mobile: string;
-    price: string;
-    cabFor: string[];
-  };
-}
-
-const CabForm = ({ isEdit = false, initialData }: CabFormProps) => {
+const CabForm = ({ isEdit = false, initialData }) => {
   const navigate = useNavigate();
   
   const [formData, setFormData] = useState({
@@ -31,7 +17,7 @@ const CabForm = ({ isEdit = false, initialData }: CabFormProps) => {
     cabFor: initialData?.cabFor || [],
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -39,7 +25,7 @@ const CabForm = ({ isEdit = false, initialData }: CabFormProps) => {
     });
   };
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     
     if (checked) {
@@ -55,7 +41,7 @@ const CabForm = ({ isEdit = false, initialData }: CabFormProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     // Here would be API call to save data
