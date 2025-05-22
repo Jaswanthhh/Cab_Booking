@@ -100,6 +100,12 @@ const Sidebar = () => {
           label="Offer" 
           active={path === '/offer'} 
         />
+        <SidebarItem 
+          to="/send-notification" 
+          icon={<i>📣</i>} 
+          label="Send Notification" 
+          active={path === '/send-notification'} 
+        />
         <div className="mt-4">
           <SidebarItem 
             to="/logout" 

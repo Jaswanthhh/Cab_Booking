@@ -61,6 +61,7 @@ const App = () => (
           <Route path="/terms" element={<PlaceholderPage title="Terms & Conditions" />} />
           <Route path="/refer-earn" element={<PlaceholderPage title="Refer & Earn" />} />
           <Route path="/offer" element={<PlaceholderPage title="Offer" />} />
+          <Route path="/send-notification" element={<PlaceholderPage title="Send Notification" />} />
           <Route path="/logout" element={<PlaceholderPage title="Logout" />} />
           
           {/* 404 Route */}
