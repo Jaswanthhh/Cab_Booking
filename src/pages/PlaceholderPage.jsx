@@ -2,11 +2,7 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 
-interface PlaceholderPageProps {
-  title: string;
-}
-
-const PlaceholderPage = ({ title }: PlaceholderPageProps) => {
+const PlaceholderPage = ({ title }) => {
   return (
     <Layout title={title}>
       <div className="bg-white p-6 rounded-lg shadow-sm text-center">

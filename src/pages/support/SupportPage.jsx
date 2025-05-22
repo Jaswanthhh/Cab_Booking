@@ -76,7 +76,7 @@ const SupportPage = () => {
     }
   ];
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     // Logic to handle search
     console.log("Searching with:", { filter, fromDate, toDate });
