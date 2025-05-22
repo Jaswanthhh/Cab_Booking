@@ -2,14 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-type SidebarItemProps = {
-  to: string;
-  icon: React.ReactNode;
-  label: string;
-  active?: boolean;
-};
-
-const SidebarItem = ({ to, icon, label, active }: SidebarItemProps) => {
+const SidebarItem = ({ to, icon, label, active }) => {
   return (
     <Link to={to} className={`sidebar-item ${active ? 'active' : ''}`}>
       <span className="text-xl">{icon}</span>

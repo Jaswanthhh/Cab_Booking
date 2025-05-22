@@ -3,20 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, Edit, Trash2 } from 'lucide-react';
 
-interface Booking {
-  id: string;
-  srNo: string;
-  customer: {
-    name: string;
-    phone: string;
-    email: string;
-    address: string;
-  };
-  time: string;
-  status: 'Dropped' | 'In Process' | 'Cancelled';
-}
-
-const mockBookings: Booking[] = [
+const mockBookings = [
   {
     id: '1',
     srNo: '01',
@@ -57,10 +44,10 @@ const mockBookings: Booking[] = [
 
 const BookingList = () => {
   const navigate = useNavigate();
-  const [bookings] = useState<Booking[]>(mockBookings);
+  const [bookings] = useState(mockBookings);
   const [currentPage] = useState(1);
   
-  const getStatusClass = (status: string) => {
+  const getStatusClass = (status) => {
     switch (status) {
       case 'Dropped':
         return 'status-dropped';
@@ -73,15 +60,15 @@ const BookingList = () => {
     }
   };
 
-  const handleView = (id: string) => {
+  const handleView = (id) => {
     navigate(`/bookings/view/${id}`);
   };
 
-  const handleEdit = (id: string) => {
+  const handleEdit = (id) => {
     navigate(`/bookings/edit/${id}`);
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id) => {
     // In a real app, this would call an API to delete the booking
     console.log(`Delete booking with ID: ${id}`);
   };

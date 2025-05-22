@@ -3,16 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
 
-interface Cab {
-  id: string;
-  vehicleType: string;
-  tagLine: string;
-  vehicleNo: string;
-  driverName: string;
-  price: string;
-}
-
-const mockCabs: Cab[] = [
+const mockCabs = [
   {
     id: '1',
     vehicleType: 'SUV',
@@ -40,7 +31,7 @@ const mockCabs: Cab[] = [
 ];
 
 const CabDetailsPage = () => {
-  const [cabs] = useState<Cab[]>(mockCabs);
+  const [cabs] = useState(mockCabs);
   
   return (
     <Layout 

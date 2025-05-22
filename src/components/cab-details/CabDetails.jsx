@@ -2,21 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-interface CabDetailsProps {
-  cab: {
-    id: string;
-    vehicleType: string;
-    tagLine: string;
-    vehicleNo: string;
-    driverName: string;
-    address: string;
-    mobile: string;
-    price: string;
-    cabFor: string[];
-  };
-}
-
-const CabDetails = ({ cab }: CabDetailsProps) => {
+const CabDetails = ({ cab }) => {
   return (
     <div className="bg-white rounded-lg p-6 shadow-sm max-w-3xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

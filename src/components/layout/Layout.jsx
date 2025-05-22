@@ -3,14 +3,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  title?: string;
-  backLink?: string;
-  actionButton?: React.ReactNode;
-}
-
-const Layout = ({ children, title, backLink, actionButton }: LayoutProps) => {
+const Layout = ({ children, title, backLink, actionButton }) => {
   return (
     <div className="flex min-h-screen">
       <Sidebar />

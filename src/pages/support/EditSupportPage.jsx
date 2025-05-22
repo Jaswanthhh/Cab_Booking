@@ -9,7 +9,7 @@ const EditSupportPage = () => {
   const [contactNumber, setContactNumber] = useState('1800 0000 0000');
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Logic to update contact number
     console.log("Updating contact number to:", contactNumber);
