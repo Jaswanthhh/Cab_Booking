@@ -4,30 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-interface BookingFormProps {
-  isReadOnly?: boolean;
-  initialData?: {
-    customerName: string;
-    customerContact: string;
-    customerEmail: string;
-    driverName: string;
-    driverContact: string;
-    driverEmail: string;
-    pickupLocation: string;
-    stoppage: string;
-    destination: string;
-    cabType: string;
-    amount: string;
-    paymentMode: string;
-    bookingStatus?: string;
-    paymentStatus?: string;
-    ratings?: string;
-    complains?: string;
-  };
-  mode: 'add' | 'edit' | 'view';
-}
-
-const BookingForm = ({ isReadOnly = false, initialData, mode }: BookingFormProps) => {
+const BookingForm = ({ isReadOnly = false, initialData, mode }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialData || {
     customerName: '',
@@ -48,7 +25,7 @@ const BookingForm = ({ isReadOnly = false, initialData, mode }: BookingFormProps
     complains: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     if (isReadOnly) return;
     
     const { name, value } = e.target;
@@ -58,7 +35,7 @@ const BookingForm = ({ isReadOnly = false, initialData, mode }: BookingFormProps
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // In a real app, this would send data to an API
     console.log('Form submitted:', formData);
